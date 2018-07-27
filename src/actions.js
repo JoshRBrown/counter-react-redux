@@ -11,11 +11,11 @@ export const DECREMENT = 'DECREMENT'
 // }
 
 // Actin creator functions
-const actionIncrement = () => {
+export const actionIncrement = () => {
   return { type: INCREMENT }
 };
 
-const actionDecrement = () => {
+export const actionDecrement = () => {
   return { type: DECREMENT }
 };
 

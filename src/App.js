@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { counter } from './reducers';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+// import Counter from './components/Counter';
+
+import Counter from './containers/CounterContainer';
+
+const store = createStore(counter);
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <Provider store={store}>
+      <div>
+        <Counter />
       </div>
+      </Provider>
     );
   }
 }
